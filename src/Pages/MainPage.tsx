@@ -12,7 +12,7 @@ const MainPageBlock = styled.div`
   min-height: 100vh;
   position: relative;
 
-  @media all and (max-width: 479px) {
+  @media all and (max-width: 1023px) {
     overflow-x: hidden;
   }
 `;
