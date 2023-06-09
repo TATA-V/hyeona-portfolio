@@ -37,7 +37,7 @@ const RealViewDetailModalBlock = styled.div`
       height: 77px;
       position: absolute;
       left: 96.7%;
-      top: 8.2%;
+      top: 6.4%;
     }
   }
 
@@ -47,7 +47,7 @@ const RealViewDetailModalBlock = styled.div`
       height: 57px;
       position: absolute;
       left: 95.5%;
-      top: 11.3%;
+      top: 6.8%;
     }
   }
 `;
@@ -94,6 +94,7 @@ const DetailModal = styled.div<Iid>`
 
   @media all and (min-width: 768px) and (max-width: 1023px) {
     width: 600px;
+    padding: 30px 0 0 31px;
 
     .title {
       color: #000;
@@ -101,12 +102,13 @@ const DetailModal = styled.div<Iid>`
       padding-right: 41px;
       line-height: 30px;
       font-weight: 700;
-      padding-bottom: ${({ num }) => (num === 1 ? "23px" : "23px")};
+      padding-bottom: 20px;
     }
   }
 
   @media all and (max-width: 767px) {
     width: 330px;
+    padding: 20px 0 0 21px;
 
     .title {
       color: #000;
@@ -114,7 +116,7 @@ const DetailModal = styled.div<Iid>`
       padding-right: 41px;
       line-height: 30px;
       font-weight: 700;
-      padding-bottom: ${({ num }) => (num === 1 ? "23px" : "23px")};
+      padding-bottom: ${({ num }) => (num === 1 ? "13.5px" : "15px")};
     }
   }
 `;
