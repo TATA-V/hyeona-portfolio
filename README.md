@@ -2,7 +2,7 @@
 
 🔗 배포 링크: <a href="https://tata-v.github.io/hyeona-portfolio/" target = "_blank">HYEONA-PORTFOLIO</a>
 <br />
-⚙️ 기술 스택: **`React`**, **`TypeScript`**, **`Styled-Components`**, **`Figma`**
+⚙️ 기술 스택: **`React`** **`TypeScript`** **`Styled-Components`** **`Figma`**
 
 <br />
 
