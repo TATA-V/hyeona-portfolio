@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hyeona-portfolio/static/css/main.47608e80.css",
-    "main.js": "/hyeona-portfolio/static/js/main.8f2646d4.js",
+    "main.js": "/hyeona-portfolio/static/js/main.82961e86.js",
     "static/media/gifBg.gif": "/hyeona-portfolio/static/media/gifBg.72f20bb60acd3551d95f.gif",
     "static/media/lumian.jpg": "/hyeona-portfolio/static/media/lumian.7e8bed84bec2f16ebd5e.jpg",
     "static/media/tata-todolist.jpg": "/hyeona-portfolio/static/media/tata-todolist.603eb0c457a1e15c7274.jpg",
@@ -16,10 +16,10 @@
     "static/media/github.svg": "/hyeona-portfolio/static/media/github.e63f10b1bf4693e95eaa1b1e8d9c2617.svg",
     "index.html": "/hyeona-portfolio/index.html",
     "main.47608e80.css.map": "/hyeona-portfolio/static/css/main.47608e80.css.map",
-    "main.8f2646d4.js.map": "/hyeona-portfolio/static/js/main.8f2646d4.js.map"
+    "main.82961e86.js.map": "/hyeona-portfolio/static/js/main.82961e86.js.map"
   },
   "entrypoints": [
     "static/css/main.47608e80.css",
-    "static/js/main.8f2646d4.js"
+    "static/js/main.82961e86.js"
   ]
 }
