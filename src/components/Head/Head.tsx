@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import RightButton from "./HeadMaterial/RightButton";
 
@@ -46,7 +46,7 @@ const Cursor = styled.div<ICursor>`
   width: ${({ isLogoHovered }) => (isLogoHovered ? "45px" : "20px")};
   height: ${({ isLogoHovered }) => (isLogoHovered ? "45px" : "20px")};
   border-radius: 50%;
-  background-color: rgba(246, 219, 244, 0.22);
+  background-color: rgba(246, 219, 244, 0.12);
   pointer-events: none;
   z-index: 9999;
   transition: transform 0.2s ease;
@@ -90,6 +90,21 @@ const Head = () => {
   const [isCursorVisible, setCursorVisible] = useState(true);
   const [isLogoHovered, setLogoHovered] = useState(false);
   const [isButtonHovered, setButtonHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false); // 모바일, 태블릿 여부
+
+  useEffect(() => {
+    // 현재 장치의 user agent 문자열을 소문자로 변환합니다.
+    const userAgent = navigator.userAgent.toLowerCase();
+
+    // 모바일 장치를 식별하는 키워드 목록입니다.
+    const mobileKeywords = ["android", "iphone", "ipad", "ipod", "blackberry", "windows phone"];
+
+    // user agent 문자열에 모바일 키워드가 포함되는지 확인합니다.
+    const isMobileDevice = mobileKeywords.some((keyword) => userAgent.includes(keyword));
+
+    // 모바일 장치인지 여부를 상태 변수에 설정합니다.
+    setIsMobile(isMobileDevice);
+  }, []);
 
   // 마우스 이동 이벤트 핸들러
   const handleMouseMove: React.MouseEventHandler<HTMLElement> = (e) => {
@@ -139,7 +154,7 @@ const Head = () => {
   return (
     <HeadBlock onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
       <RealHead>
-        {isCursorVisible && !isButtonHovered && <Cursor cursorPosition={cursorPosition} isLogoHovered={isLogoHovered} />}
+        {isCursorVisible && !isButtonHovered && !isMobile && <Cursor cursorPosition={cursorPosition} isLogoHovered={isLogoHovered} />}
         <button onClick={handleLogoClick} className="logo" onMouseEnter={handleLogoMouseEnter} onMouseLeave={handleLogoMouseLeave}>
           HYEONA'S PORTFOLIO
         </button>
