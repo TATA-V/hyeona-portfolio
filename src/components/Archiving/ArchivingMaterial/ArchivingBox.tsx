@@ -56,7 +56,7 @@ const ArchivingBoxBlock = styled.div<Ititle>`
   @media all and (min-width: 768px) and (max-width: 1023px) {
     width: 330px;
     margin-bottom: 20px;
-    height: ${({ title }) => (title === "GitHub" ? `305px` : `315px`)};
+    height: 315px;
 
     .archiving-box {
       .archiving-img {
