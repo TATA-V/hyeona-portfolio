@@ -120,8 +120,8 @@ const data: IProjectData[] = [
       `,
       backgroundContent: `피그마를 사용하여 디자인한 후 만든 첫 프로젝트입니다.
       
-      이 프로젝트는 전역 상태 관리를 연습하기 위해 제작되었고,
-      리팩토링 과정에서 TypeScript를 도입하고 Storybook을 추가하였습니다. 
+      전역 상태 관리를 연습하기 위해 제작되었고,
+      리팩토링 과정에서 TypeScript와 Storybook을 추가하였습니다. 
       `,
       storyLink: "https://tata-v.github.io/todolist-storybook-typescript/?path=/story/main-adcbutton--primary",
       storyTxt: "TATA’s-Todo-List-Storybook",
