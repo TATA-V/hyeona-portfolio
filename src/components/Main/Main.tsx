@@ -85,8 +85,7 @@ const TopTextBtnBox = styled.div`
 
   .des {
     font-size: 14px;
-    font-weight: 300;
-    text-shadow: 0 0 0 #f9f9f9;
+    font-weight: 400;
     color: #f9f9f9;
     padding: 18px 0 45px 0;
   }
