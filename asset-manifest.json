@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hyeona-portfolio/static/css/main.47608e80.css",
-    "main.js": "/hyeona-portfolio/static/js/main.535d42fd.js",
+    "main.js": "/hyeona-portfolio/static/js/main.7e121218.js",
     "static/media/gifBg.gif": "/hyeona-portfolio/static/media/gifBg.72f20bb60acd3551d95f.gif",
     "static/media/lumian.jpg": "/hyeona-portfolio/static/media/lumian.7e8bed84bec2f16ebd5e.jpg",
     "static/media/tata-todolist.jpg": "/hyeona-portfolio/static/media/tata-todolist.603eb0c457a1e15c7274.jpg",
@@ -9,14 +9,17 @@
     "static/media/portfolio.jpg": "/hyeona-portfolio/static/media/portfolio.5dd794dddbaa0c10a138.jpg",
     "static/media/frame-libraries.png": "/hyeona-portfolio/static/media/frame-libraries.b2fa79bf57003b450430.png",
     "static/media/others.png": "/hyeona-portfolio/static/media/others.89cab9dc14b07a8163b8.png",
+    "static/media/othersTxt.png": "/hyeona-portfolio/static/media/othersTxt.03d7ddfa085f25791d72.png",
+    "static/media/languagesTxt.png": "/hyeona-portfolio/static/media/languagesTxt.017dcab449d0a3a26192.png",
+    "static/media/frameLibrariesTxt.png": "/hyeona-portfolio/static/media/frameLibrariesTxt.f4cf21625cc7aa44a9c0.png",
     "static/media/star.svg": "/hyeona-portfolio/static/media/star.fe9cc6d40a0faaf481d8beefe1684048.svg",
     "static/media/github.svg": "/hyeona-portfolio/static/media/github.e63f10b1bf4693e95eaa1b1e8d9c2617.svg",
     "index.html": "/hyeona-portfolio/index.html",
     "main.47608e80.css.map": "/hyeona-portfolio/static/css/main.47608e80.css.map",
-    "main.535d42fd.js.map": "/hyeona-portfolio/static/js/main.535d42fd.js.map"
+    "main.7e121218.js.map": "/hyeona-portfolio/static/js/main.7e121218.js.map"
   },
   "entrypoints": [
     "static/css/main.47608e80.css",
-    "static/js/main.535d42fd.js"
+    "static/js/main.7e121218.js"
   ]
 }
