@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import starBar from "../../assets/png-file/star-bar.png";
 import languages from "../../assets/png-file/languages.png";
+import languagesTxt from "../../assets/png-file/languagesTxt.png";
 import frameLibraries from "../../assets/png-file/frame-libraries.png";
+import frameLibrariesTxt from "../../assets/png-file/frameLibrariesTxt.png";
 import others from "../../assets/png-file/others.png";
+import othersTxt from "../../assets/png-file/othersTxt.png";
 
 const SkillsBlock = styled.div`
   width: 100%;
@@ -173,25 +176,15 @@ const Languages = styled.div`
     .js-ts-html-css {
       width: 275px;
       height: 85px;
-      background: no-repeat url(${languages});
+      background: no-repeat url(${languagesTxt});
       background-size: cover;
       display: flex;
 
-      .js {
-        padding: 4px 0 0 11px;
-        font-size: 2px;
-      }
-      .ts {
-        padding: 4px 0 0 26px;
-        font-size: 2px;
-      }
-      .html {
-        padding: 4px 0 0 35px;
-        font-size: 2px;
-      }
+      .js,
+      .ts,
+      .html,
       .css {
-        padding: 4px 0 0 47px;
-        font-size: 2px;
+        display: none;
       }
     }
   }
@@ -281,21 +274,14 @@ const FrameAndLibraries = styled.div`
       transform: translate(118px, 0);
       width: 206px;
       height: 85px;
-      background: no-repeat url(${frameLibraries});
+      background: no-repeat url(${frameLibrariesTxt});
       background-size: cover;
       display: flex;
 
-      .react {
-        padding: 4px 0 0 30px;
-        font-size: 2px;
-      }
-      .redux {
-        padding: 4px 0 0 42px;
-        font-size: 2px;
-      }
+      .react,
+      .redux,
       .styled {
-        padding: 4px 0 0 13px;
-        font-size: 2px;
+        display: none;
       }
     }
   }
@@ -376,25 +362,16 @@ const Others = styled.div`
     .git-s3-postman-figma {
       width: 275px;
       height: 85px;
-      background: no-repeat url(${others});
+      background: no-repeat url(${othersTxt});
       background-size: cover;
       display: flex;
+      justify-content: space-between;
 
-      .git {
-        padding: 4px 0 0 27px;
-        font-size: 2px;
-      }
-      .s3 {
-        padding: 4px 0 0 43px;
-        font-size: 2px;
-      }
-      .postman {
-        padding: 4px 0 0 31px;
-        font-size: 2px;
-      }
+      .git,
+      .s3,
+      .postman,
       .figma {
-        padding: 4px 0 0 37px;
-        font-size: 2px;
+        display: none;
       }
     }
   }
