@@ -93,16 +93,10 @@ const Head = () => {
   const [isMobile, setIsMobile] = useState(false); // 모바일, 태블릿 여부
 
   useEffect(() => {
-    // 현재 장치의 user agent 문자열을 소문자로 변환합니다.
     const userAgent = navigator.userAgent.toLowerCase();
-
-    // 모바일 장치를 식별하는 키워드 목록입니다.
     const mobileKeywords = ["android", "iphone", "ipad", "ipod", "blackberry", "windows phone"];
-
-    // user agent 문자열에 모바일 키워드가 포함되는지 확인합니다.
     const isMobileDevice = mobileKeywords.some((keyword) => userAgent.includes(keyword));
 
-    // 모바일 장치인지 여부를 상태 변수에 설정합니다.
     setIsMobile(isMobileDevice);
   }, []);
 
