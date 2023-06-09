@@ -221,12 +221,11 @@ const FrameAndLibraries = styled.div`
       padding: 9px 0 0 65px;
     }
     .redux {
-      padding: 9px 0 0 52px;
+      padding: 9px 0 0 95px;
     }
     .styled {
-      font-size: 15px;
       text-align: center;
-      padding: 9px 30 0 29px;
+      padding: 9px 0 0 36px;
     }
   }
 
