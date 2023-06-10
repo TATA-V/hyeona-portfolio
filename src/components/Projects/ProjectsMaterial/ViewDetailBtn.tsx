@@ -21,6 +21,7 @@ const ViewDetailBtnBlock = styled.div`
     font-weight: 700;
     text-shadow: 0 0 0 #30313e;
     border-radius: 3px;
+    text-shadow: none;
 
     display: flex;
     justify-content: center;
