@@ -50,8 +50,8 @@ const Cursor = styled.div<ICursor>`
   pointer-events: none;
   z-index: 9999;
   transition: transform 0.2s ease;
-  top: ${({ cursorPosition, isLogoHovered }) => (isLogoHovered ? `${cursorPosition.y - 30}px` : `${cursorPosition.y - 10}px`)};
-  left: ${({ cursorPosition, isLogoHovered }) => (isLogoHovered ? `${cursorPosition.x - 30}px` : `${cursorPosition.x - 10}px`)};
+  top: ${({ cursorPosition, isLogoHovered }) => (isLogoHovered ? `${cursorPosition.y - 23}px` : `${cursorPosition.y - 10}px`)};
+  left: ${({ cursorPosition, isLogoHovered }) => (isLogoHovered ? `${cursorPosition.x - 23}px` : `${cursorPosition.x - 10}px`)};
   transform: ${({ isLogoHovered }) => (isLogoHovered ? "scale(1.5)" : "none")};
 `;
 
