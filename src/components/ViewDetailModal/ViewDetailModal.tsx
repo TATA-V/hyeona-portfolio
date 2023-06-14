@@ -4,6 +4,8 @@ import xBtn from "../../assets/png-file/x-btn.png";
 import star from "../../assets/svg-file/star.svg";
 import { IViewDetail } from "../Projects/data";
 
+import RoleTable from "./ViewDetailMaterial/RoleTable";
+
 const ViewDetailModalBlock = styled.div`
   position: fixed;
   top: 0;
@@ -182,12 +184,13 @@ const Summary = styled.div`
   }
 
   .features-txt {
-    padding-bottom: 13px;
+    font-weight: 700;
+    padding-bottom: 14px;
+  }
 
-    .purple-txt {
-      color: #97859d;
-      text-shadow: 0 0 0 #97859d;
-    }
+  .purple-txt {
+    color: #97859d;
+    text-shadow: 0 0 0 #97859d;
   }
 `;
 
@@ -213,6 +216,22 @@ interface IViewDetailProps {
 const ViewDetailModal = ({ id, openViewDetail, setOpenViewDetail, viewDetail }: IViewDetailProps) => {
   const viewDetailRef = useRef<HTMLDivElement>(null);
 
+  const {
+    title,
+    meaningContent,
+    deploLink,
+    deploTxt,
+    storyLink,
+    storyTxt,
+    githubLink,
+    githubTxt,
+    stacks,
+    summarygContent,
+    featuresContent,
+    backgroundContent,
+    myRole,
+  } = viewDetail;
+
   useEffect(() => {
     const closeModal = (e: MouseEvent) => {
       if (openViewDetail && viewDetailRef.current && !viewDetailRef.current.contains(e.target as Node)) {
@@ -235,7 +254,7 @@ const ViewDetailModal = ({ id, openViewDetail, setOpenViewDetail, viewDetail }: 
       <RealViewDetailModalBlock ref={viewDetailRef}>
         <DetailModal num={id}>
           <div className="title-box">
-            <h3 className="title">{viewDetail.title}</h3>
+            <h3 className="title">{title}</h3>
             <div className="lilac-line"></div>
           </div>
           <MeaningSummaryBackgroung>
@@ -245,25 +264,25 @@ const ViewDetailModal = ({ id, openViewDetail, setOpenViewDetail, viewDetail }: 
                 <img className="star" src={star} alt="star" />
                 <span className="sub-title">Meaning</span>
               </div>
-              <p className="meaning-content content">{viewDetail.meaningContent}</p>
+              <p className="meaning-content content">{meaningContent}</p>
               <p className="link-stacks content">
                 ⦁ 배포 링크:{" "}
-                <a className="link" rel="noreferrer" href={viewDetail.deploLink} target="_blank">
-                  {viewDetail.deploTxt}
+                <a className="link" rel="noreferrer" href={deploLink} target="_blank">
+                  {deploTxt}
                 </a>
-                {viewDetail.storyLink && viewDetail.storyTxt && (
+                {storyLink && storyTxt && (
                   <>
                     <br />⦁ Storybook 링크:{" "}
-                    <a className="link" rel="noreferrer" href={viewDetail.storyLink} target="_blank">
-                      {viewDetail.storyTxt}
+                    <a className="link" rel="noreferrer" href={storyLink} target="_blank">
+                      {storyTxt}
                     </a>
                   </>
                 )}
                 <br />⦁ GitHub 링크:{" "}
-                <a className="link" rel="noreferrer" href={viewDetail.githubLink} target="_blank">
-                  {viewDetail.githubTxt}
+                <a className="link" rel="noreferrer" href={githubLink} target="_blank">
+                  {githubTxt}
                 </a>
-                <br />⦁ 기술 스택: {viewDetail.stacks}
+                <br />⦁ 기술 스택: {stacks}
               </p>
             </Meaning>
 
@@ -273,12 +292,15 @@ const ViewDetailModal = ({ id, openViewDetail, setOpenViewDetail, viewDetail }: 
                 <img className="star" src={star} alt="star" />
                 <span className="sub-title">Summary</span>
               </div>
-              <p className="summary-content content">{viewDetail.summarygContent}</p>
+              <p className="summary-content content">{summarygContent}</p>
+
+              {/* 표 => RoleTable 컴포넌트 */}
+              {myRole && <RoleTable myRole={myRole} />}
 
               <div className="features-txt content">
                 <span className="purple-txt">★</span> 주요 기능
               </div>
-              <p className="features content">{viewDetail.featuresContent}</p>
+              <p className="features content">{featuresContent}</p>
             </Summary>
 
             {/* Background */}
@@ -287,7 +309,7 @@ const ViewDetailModal = ({ id, openViewDetail, setOpenViewDetail, viewDetail }: 
                 <img className="star" src={star} alt="star" />
                 <span className="sub-title">Background</span>
               </div>
-              <p className="background-des content">{viewDetail.backgroundContent}</p>
+              <p className="background-des content">{backgroundContent}</p>
             </Background>
           </MeaningSummaryBackgroung>
         </DetailModal>
