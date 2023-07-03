@@ -108,7 +108,7 @@ const data: IProjectData[] = [
     stacks: "React, Redux, Styled-components, Typescript, Storybook, Figma",
     content: `BT21 캐릭터 컨셉으로 디자인하였으며, 타입스크립트와 스토리북을 사용했습니다. Todo를 쉽게 생성하고 수정, 삭제할 수 있으며 Fold, Unfold를 눌러 리스트들을 접거나 필 수 있습니다.`,
     features: `Todo 생성, 수정, 삭제, Todo list를 접거나 필 수 있는 기능`,
-    githubLink: "https://tata-v.github.io/react-todolist-redux/",
+    githubLink: "https://github.com/TATA-V/todolist-storybook-typescript",
     githubTxt: "github.com/TATA-V/todolist",
     deploLink: "https://tata-v.github.io/react-todolist-redux/",
     deploTxt: "TATA’s-Todo-List",
