@@ -197,7 +197,7 @@ const Others = styled.div`
   }
 
   @media all and (max-width: 767px) {
-    transform: translate(0, -75px);
+    transform: translate(0, -80px);
     width: 325px;
     height: 221px;
 
