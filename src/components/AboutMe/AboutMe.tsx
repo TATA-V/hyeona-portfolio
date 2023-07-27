@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import starBar from "../../assets/png-file/star-bar.png";
-import peopleImg from "../../assets/png-file/people.png";
-import emailImg from "../../assets/png-file/email.png";
-import calenderImg from "../../assets/png-file/calender.png";
-import locationImg from "../../assets/png-file/location.png";
+import styled from 'styled-components';
+import starBar from '../../assets/png-file/star-bar.png';
+import peopleImg from '../../assets/png-file/people.png';
+import emailImg from '../../assets/png-file/email.png';
+import calenderImg from '../../assets/png-file/calender.png';
+import locationImg from '../../assets/png-file/location.png';
 
 const AboutMeBlock = styled.div`
   width: 100%;
@@ -143,7 +143,6 @@ const InforBox = styled.div`
   // 생년월일
   .birthdate {
     display: flex;
-    width: 144px;
     height: 58px;
 
     .calender-img {
@@ -162,7 +161,6 @@ const InforBox = styled.div`
   // 주소지
   .address {
     display: flex;
-    width: 126px;
     height: 56px;
 
     .location-img {
@@ -179,7 +177,7 @@ const InforBox = styled.div`
   }
 
   @media all and (min-width: 480px) and (max-width: 767px) {
-    width: 366px;
+    width: 355px;
 
     .bold {
       font-size: 16px;
@@ -224,7 +222,6 @@ const InforBox = styled.div`
   .birthdate {
     height: 50px;
     display: flex;
-    justify-content: end;
     padding-right: 13px;
 
     .calender-img {
@@ -241,7 +238,6 @@ const InforBox = styled.div`
   .address {
     height: 48px;
     display: flex;
-    justify-content: end;
     padding-right: 2px;
 
     .location-img {
@@ -300,7 +296,6 @@ const InforBox = styled.div`
   .birthdate {
     height: 50px;
     display: flex;
-    justify-content: end;
     padding-right: 13px;
 
     .calender-img {
@@ -375,7 +370,7 @@ const AboutMe = () => {
               <img className="location-img" src={locationImg} alt="address" />
               <p className="address-txt-box">
                 <span className="bold">Address</span>
-                <span className="not-bold">서울</span>
+                <span className="not-bold">서울특별시 서초구</span>
               </p>
             </div>
           </div>
