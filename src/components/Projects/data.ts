@@ -60,7 +60,7 @@ const data: IProjectData[] = [
     작성 할 수 있는 Artist 페이지`,
     githubLink: 'https://github.com/TATA-V/lumian-project',
     githubTxt: 'github.com/TATA-V/lumian-project',
-    deploLink: 'https://github.com/codestates-seb/seb43_main_010',
+    deploLink: 'http://lumian-project.s3-website.ap-northeast-2.amazonaws.com',
     deploTxt: 'LUMIAN',
     linecolor: '#343843',
     viewDetail: {
@@ -70,7 +70,7 @@ const data: IProjectData[] = [
       
       빛은 영감과 창의성을 상징하는 요소로, Luminae과 via는
       아티스트와팬 간의 관계를 나타내며, 빛이 가득한 길로 함께 나아가는 것을 상징합니다.`,
-      deploLink: 'https://github.com/codestates-seb/seb43_main_010',
+      deploLink: 'http://lumian-project.s3-website.ap-northeast-2.amazonaws.com',
       deploTxt: 'LUMIAN',
       githubLink: 'https://github.com/TATA-V/lumian-project',
       githubTxt: 'github.com/TATA-V/lumian',
