@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import starBar from "../../assets/png-file/star-bar2.png";
-import github from "../../assets/svg-file/github.svg";
-import velog from "../../assets/png-file/velog.png";
-import zigzag from "../../assets/png-file/zigzag.png";
+import styled from 'styled-components';
+import starBar from '../../assets/png-file/star-bar2.png';
+import github from '../../assets/svg-file/github.svg';
+import velog from '../../assets/png-file/velog.png';
+import zigzag from '../../assets/png-file/zigzag.png';
 
-import ArchivingBox from "./ArchivingMaterial/ArchivingBox";
+import ArchivingBox from './ArchivingMaterial/ArchivingBox';
 
 const ArchivingBlock = styled.div`
   width: 100%;
@@ -154,9 +154,9 @@ const Archiving = () => {
             link="https://velog.io/@tata-v_vlelog"
             linkTxt="velog.io/@tata-v"
             des="복습 및 공유를 위한 블로그"
-            firstTxt="공부했던 내용들을 복습하기 위해 기록"
-            secondTxt="프로젝트를 하며 궁금했던 내용들을 공부하며 정리"
-            thirdTxt="프론트엔드 수업에서 배웠던 웹 관련 지식들을 정리"
+            firstTxt="웹, 앱 관련 지식들을 정리"
+            secondTxt="공부했던 내용들을 복습하기 위해 기록"
+            thirdTxt="프로젝트를 하며 궁금했던 내용들을 공부하며 정리"
           />
         </ArchivingAndVelog>
       </RealArchivingBlock>
