@@ -25,7 +25,7 @@ const RealHead = styled.div`
 
   .logo {
     color: #f9f9f9;
-    font-size: 29px;
+    font-size: 28px;
     font-weight: 700;
     user-select: none;
   }
@@ -182,6 +182,7 @@ const Head = () => {
         {isCursorVisible && !isButtonHovered && !isMobile && (
           <Cursor cursorPosition={cursorPosition} isLogoHovered={isLogoHovered} />
         )}
+
         <button
           onClick={handleLogoClick}
           className="logo"

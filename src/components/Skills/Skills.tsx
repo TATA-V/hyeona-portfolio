@@ -178,7 +178,7 @@ const Languages = styled.div`
   }
 
   &.frame-in {
-    animation: ${languagesFrameIn} 1.2s forwards;
+    animation: ${languagesFrameIn} 1s forwards;
   }
 
   @media all and (min-width: 768px) and (max-width: 1023px) {
@@ -305,8 +305,8 @@ const FrameAndLibraries = styled.div`
 
   &.frame-in {
     opacity: 0;
-    animation: ${librariesFrameIn} 1.2s forwards;
-    animation-delay: 0.15s;
+    animation: ${librariesFrameIn} 1s forwards;
+    animation-delay: 0.1s;
   }
 
   .lilac-line {
