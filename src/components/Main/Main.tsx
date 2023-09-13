@@ -166,6 +166,10 @@ const Main = () => {
   const [initialHeight, setInitialHeight] = useState(0);
 
   useEffect(() => {
+    setInitialHeight(window.innerHeight);
+  }, []);
+
+  useEffect(() => {
     function handleResize() {
       setInitialHeight(window.innerHeight);
     }
