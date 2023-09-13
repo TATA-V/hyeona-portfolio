@@ -178,6 +178,7 @@ const Languages = styled.div`
   }
 
   &.frame-in {
+    opacity: 0;
     animation: ${languagesFrameIn} 1s forwards;
   }
 
