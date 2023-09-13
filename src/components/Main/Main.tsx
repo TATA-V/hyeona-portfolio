@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import gifBg from '../../assets/gif-file/gifBg.gif';
+import { useEffect, useState } from 'react';
 
 import MoreBtn from './MainMaterial/MoreBtn';
 
-const MainBlock = styled.div<mainScrollTop>`
+const MainBlock = styled.div<initialHeight>`
   width: 100%;
-  height: ${({ mainScrollTop }) => (mainScrollTop ? `${mainScrollTop}px` : '796px')};
+  height: ${({ initialHeight }) => (initialHeight ? `${initialHeight}px` : '796px')};
   background-color: #000;
 
   display: flex;
@@ -22,14 +23,14 @@ const MainBlock = styled.div<mainScrollTop>`
   }
 `;
 
-const RealMainBlock = styled.div<mainScrollTop>`
+const RealMainBlock = styled.div<initialHeight>`
   width: 1440px;
-  height: ${({ mainScrollTop }) => (mainScrollTop ? `${mainScrollTop}px` : '796px')};
+  height: ${({ initialHeight }) => (initialHeight ? `${initialHeight}px` : '796px')};
   display: flex;
   justify-content: center;
 
   background: no-repeat url(${gifBg}); // 움직이는 gif로 바꿔야 함
-  background-size: ${({ mainScrollTop }) => (mainScrollTop ? 'cover' : '1440px 804px')};
+  background-size: ${({ initialHeight }) => (initialHeight ? 'cover' : '1440px 804px')};
   background-position: 50% 10%;
   position: relative;
   z-index: 1;
@@ -37,7 +38,7 @@ const RealMainBlock = styled.div<mainScrollTop>`
   &::before {
     content: '';
     width: 60px;
-    height: ${({ mainScrollTop }) => (mainScrollTop ? `${mainScrollTop}px` : '796px')};
+    height: ${({ initialHeight }) => (initialHeight ? `${initialHeight}px` : '796px')};
     position: absolute;
     right: 0%;
     background: linear-gradient(to left, #000, transparent);
@@ -46,7 +47,7 @@ const RealMainBlock = styled.div<mainScrollTop>`
   &::after {
     content: '';
     width: 60px;
-    height: ${({ mainScrollTop }) => (mainScrollTop ? `${mainScrollTop}px` : '796px')};
+    height: ${({ initialHeight }) => (initialHeight ? `${initialHeight}px` : '796px')};
     position: absolute;
     left: 0%;
     background: linear-gradient(to left, transparent, #000);
@@ -157,16 +158,28 @@ const TopTextBtnBox = styled.div`
   }
 `;
 
-interface mainScrollTop {
-  mainScrollTop: number;
+interface initialHeight {
+  initialHeight: number;
 }
 
 const Main = () => {
-  const mainScrollTop = window.innerHeight;
+  const [initialHeight, setInitialHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    function handleResize() {
+      setInitialHeight(window.innerHeight);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [initialHeight]);
 
   return (
-    <MainBlock mainScrollTop={mainScrollTop} className="main">
-      <RealMainBlock mainScrollTop={mainScrollTop} className="main-bg">
+    <MainBlock initialHeight={initialHeight} className="main">
+      <RealMainBlock initialHeight={initialHeight} className="main-bg">
         <TopTextBtnBox>
           <div className="top-text-btn">
             <p className="top-txt">
