@@ -40,8 +40,6 @@ const RightButton = ({ text }: IRightButtonProps) => {
   const skillTop = 782;
   const archivingTop = 570;
 
-  console.log(mainScrollTop);
-
   const handleBtnClick = () => {
     if (text === 'About me') {
       window.scrollTo({

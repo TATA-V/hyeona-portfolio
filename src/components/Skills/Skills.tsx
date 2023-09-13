@@ -1,8 +1,67 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import starBar from '../../assets/png-file/star-bar.png';
 import languages from '../../assets/png-file/languages.png';
 import frameLibraries from '../../assets/png-file/frame-libraries.png';
 import others from '../../assets/png-file/others.png';
+import { useState, useRef, useEffect } from 'react';
+
+const languagesFrameIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-40%);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateX(0%);
+  }
+`;
+
+const othersFrameIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translate(700px, -77px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translate(545px, -77px);
+  }
+`;
+const othersFrameIn1023 = keyframes`
+  0% {
+    opacity: 0;
+    transform: translate(545px, -77px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translate(272px, -80px);
+  }
+`;
+const othersFrameIn767 = keyframes`
+  0% {
+    opacity: 0;
+    transform: translate(272px, -77px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translate(0, -80px);
+  }
+`;
+
+const librariesFrameIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translate(-40%, -155px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translate(0, -155px);
+  }
+`;
 
 const SkillsBlock = styled.div`
   width: 100%;
@@ -118,6 +177,10 @@ const Languages = styled.div`
     display: flex;
   }
 
+  &.frame-in {
+    animation: ${languagesFrameIn} 1.2s forwards;
+  }
+
   @media all and (min-width: 768px) and (max-width: 1023px) {
     width: 600px;
     margin-bottom: 35px;
@@ -156,6 +219,12 @@ const Others = styled.div`
 
   transform: translate(545px, -77px);
 
+  &.frame-in {
+    opacity: 0;
+    animation: ${othersFrameIn} 1.2s forwards;
+    animation-delay: 0.1s;
+  }
+
   .lilac-line {
     width: 64px;
     height: 2px;
@@ -183,6 +252,12 @@ const Others = styled.div`
     margin-bottom: 35px;
     width: 329px;
 
+    &.frame-in {
+      opacity: 0;
+      animation: ${othersFrameIn1023} 1.2s forwards;
+      animation-delay: 0.1s;
+    }
+
     .lilac-line {
       width: 52px;
     }
@@ -200,6 +275,12 @@ const Others = styled.div`
     transform: translate(0, -80px);
     width: 325px;
     height: 221px;
+
+    &.frame-in {
+      opacity: 0;
+      animation: ${othersFrameIn767} 1.2s forwards;
+      animation-delay: 0.1s;
+    }
 
     .lilac-line {
       width: 46px;
@@ -221,6 +302,12 @@ const FrameAndLibraries = styled.div`
   height: 225px;
 
   transform: translate(0, -155px);
+
+  &.frame-in {
+    opacity: 0;
+    animation: ${librariesFrameIn} 1.2s forwards;
+    animation-delay: 0.15s;
+  }
 
   .lilac-line {
     width: 221px;
@@ -270,6 +357,33 @@ const FrameAndLibraries = styled.div`
 `;
 
 const Skills = () => {
+  const [skillsView, setSkillsView] = useState(false);
+  const skillsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!skillsRef.current) return; // 요소가 아직 준비되지 않은 경우 중단
+
+    const callback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // 요소가 뷰포트에 나타났을 경우
+          setSkillsView(true);
+        } else {
+          // 요소가 뷰포트를 벗어난 경우
+          setSkillsView(false);
+        }
+      });
+    };
+    const options = { root: null, rootMargin: '0px', threshold: 0 };
+
+    const observer = new IntersectionObserver(callback, options);
+    observer.observe(skillsRef.current); // 요소 관찰 시작
+
+    return () => {
+      observer.disconnect(); // 컴포넌트 언마운트 시 관찰 중단
+    };
+  }, []);
+
   return (
     <SkillsBlock>
       <RealSkillsBlock>
@@ -278,23 +392,25 @@ const Skills = () => {
           <img className="star-bar" src={starBar} alt="star" />
         </div>
 
-        <Languages>
-          <p className="skills-bold">Programming Languages</p>
-          <div className="lilac-line"></div>
-          <div className="js-ts-html-css"></div>
-        </Languages>
+        <div ref={skillsRef}>
+          <Languages className={skillsView ? 'frame-in' : ''}>
+            <p className="skills-bold">Programming Languages</p>
+            <div className="lilac-line"></div>
+            <div className="js-ts-html-css"></div>
+          </Languages>
 
-        <Others>
-          <p className="skills-bold frame">Others</p>
-          <div className="lilac-line"></div>
-          <div className="react-redux-styled"></div>
-        </Others>
+          <Others className={skillsView ? 'frame-in' : ''}>
+            <p className="skills-bold frame">Others</p>
+            <div className="lilac-line"></div>
+            <div className="react-redux-styled"></div>
+          </Others>
 
-        <FrameAndLibraries>
-          <p className="skills-bold">Frameworks & Libraries</p>
-          <div className="lilac-line"></div>
-          <div className="git-s3-postman-figma"></div>
-        </FrameAndLibraries>
+          <FrameAndLibraries className={skillsView ? 'frame-in' : ''}>
+            <p className="skills-bold">Frameworks & Libraries</p>
+            <div className="lilac-line"></div>
+            <div className="git-s3-postman-figma"></div>
+          </FrameAndLibraries>
+        </div>
       </RealSkillsBlock>
     </SkillsBlock>
   );
