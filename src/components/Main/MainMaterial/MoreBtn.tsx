@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const MoreBtnBlock = styled.div`
   .more-btn {
@@ -49,10 +49,12 @@ const MoreBtnBlock = styled.div`
 `;
 
 const MoreBtn = () => {
+  const mainScrollTop = window.innerHeight;
+
   const handleLearnClick = () => {
     window.scrollTo({
-      top: 716,
-      behavior: "smooth",
+      top: mainScrollTop - 71,
+      behavior: 'smooth',
     });
   };
 

@@ -1,11 +1,12 @@
-import styled from "styled-components";
-import gifBg from "../../assets/gif-file/gifBg.gif";
+import styled from 'styled-components';
+import gifBg from '../../assets/gif-file/gifBg.gif';
+import { useEffect, useState } from 'react';
 
-import MoreBtn from "./MainMaterial/MoreBtn";
+import MoreBtn from './MainMaterial/MoreBtn';
 
-const MainBlock = styled.div`
+const MainBlock = styled.div<initialHeight>`
   width: 100%;
-  height: 796px;
+  height: ${({ initialHeight }) => (initialHeight ? `${initialHeight}px` : '796px')};
   background-color: #000;
 
   display: flex;
@@ -22,30 +23,31 @@ const MainBlock = styled.div`
   }
 `;
 
-const RealMainBlock = styled.div`
+const RealMainBlock = styled.div<initialHeight>`
   width: 1440px;
-  height: 796px;
+  height: ${({ initialHeight }) => (initialHeight ? `${initialHeight}px` : '796px')};
   display: flex;
   justify-content: center;
 
   background: no-repeat url(${gifBg}); // 움직이는 gif로 바꿔야 함
-  background-size: 1440px 804px;
+  background-size: ${({ initialHeight }) => (initialHeight ? 'cover' : '1440px 804px')};
   background-position: 50% 10%;
   position: relative;
+  z-index: 1;
 
   &::before {
-    content: "";
+    content: '';
     width: 60px;
-    height: 796px;
+    height: ${({ initialHeight }) => (initialHeight ? `${initialHeight}px` : '796px')};
     position: absolute;
     right: 0%;
     background: linear-gradient(to left, #000, transparent);
   }
 
   &::after {
-    content: "";
+    content: '';
     width: 60px;
-    height: 796px;
+    height: ${({ initialHeight }) => (initialHeight ? `${initialHeight}px` : '796px')};
     position: absolute;
     left: 0%;
     background: linear-gradient(to left, transparent, #000);
@@ -156,10 +158,28 @@ const TopTextBtnBox = styled.div`
   }
 `;
 
+interface initialHeight {
+  initialHeight: number;
+}
+
 const Main = () => {
+  const [initialHeight, setInitialHeight] = useState(0);
+
+  useEffect(() => {
+    function handleResize() {
+      setInitialHeight(window.innerHeight);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [initialHeight]);
+
   return (
-    <MainBlock className="main">
-      <RealMainBlock className="main-bg">
+    <MainBlock initialHeight={initialHeight} className="main">
+      <RealMainBlock initialHeight={initialHeight} className="main-bg">
         <TopTextBtnBox>
           <div className="top-text-btn">
             <p className="top-txt">

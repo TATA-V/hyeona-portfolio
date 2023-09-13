@@ -1,12 +1,13 @@
-import styled from "styled-components";
-import { useState, useEffect } from "react";
+import styled from 'styled-components';
+import { useState, useEffect } from 'react';
 
-import RightButton from "./HeadMaterial/RightButton";
+import RightButton from './HeadMaterial/RightButton';
 
-const HeadBlock = styled.header`
+const HeadBlock = styled.header<IisMainScrolled>`
   width: 100%;
   height: 80px;
-  background-color: #000;
+  background: ${({ isMainScrolled }) =>
+    isMainScrolled ? 'linear-gradient(to right, #3e2e3d, #151315, #000)' : '#000'};
 
   display: flex;
   justify-content: center;
@@ -43,16 +44,18 @@ const RealHead = styled.div`
 
 const Cursor = styled.div<ICursor>`
   position: fixed;
-  width: ${({ isLogoHovered }) => (isLogoHovered ? "45px" : "20px")};
-  height: ${({ isLogoHovered }) => (isLogoHovered ? "45px" : "20px")};
+  width: ${({ isLogoHovered }) => (isLogoHovered ? '45px' : '20px')};
+  height: ${({ isLogoHovered }) => (isLogoHovered ? '45px' : '20px')};
   border-radius: 50%;
-  background-color: rgba(246, 219, 244, 0.12);
+  background-color: rgba(246, 219, 244, 0.18);
   pointer-events: none;
   z-index: 9999;
   transition: transform 0.2s ease;
-  top: ${({ cursorPosition, isLogoHovered }) => (isLogoHovered ? `${cursorPosition.y - 23}px` : `${cursorPosition.y - 10}px`)};
-  left: ${({ cursorPosition, isLogoHovered }) => (isLogoHovered ? `${cursorPosition.x - 23}px` : `${cursorPosition.x - 10}px`)};
-  transform: ${({ isLogoHovered }) => (isLogoHovered ? "scale(1.5)" : "none")};
+  top: ${({ cursorPosition, isLogoHovered }) =>
+    isLogoHovered ? `${cursorPosition.y - 23}px` : `${cursorPosition.y - 10}px`};
+  left: ${({ cursorPosition, isLogoHovered }) =>
+    isLogoHovered ? `${cursorPosition.x - 23}px` : `${cursorPosition.x - 10}px`};
+  transform: ${({ isLogoHovered }) => (isLogoHovered ? 'scale(1.5)' : 'none')};
 `;
 
 interface IButtonTxt {
@@ -64,21 +67,25 @@ interface IButtonTxt {
 const buttonTxt: IButtonTxt[] = [
   {
     id: 1,
-    text: "About me",
+    text: 'About me',
   },
   {
     id: 2,
-    text: "Skills",
+    text: 'Skills',
   },
   {
     id: 3,
-    text: "Archiving",
+    text: 'Archiving',
   },
   {
     id: 4,
-    text: "Projects",
+    text: 'Projects',
   },
 ];
+
+interface IisMainScrolled {
+  isMainScrolled: boolean;
+}
 
 interface ICursor {
   cursorPosition: { x: number; y: number };
@@ -91,13 +98,29 @@ const Head = () => {
   const [isLogoHovered, setLogoHovered] = useState(false);
   const [isButtonHovered, setButtonHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false); // 모바일, 태블릿 여부
+  const [isMainScrolled, setIsMainScrolled] = useState(false);
 
   useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase();
-    const mobileKeywords = ["android", "iphone", "ipad", "ipod", "blackberry", "windows phone"];
+    const mobileKeywords = ['android', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
     const isMobileDevice = mobileKeywords.some((keyword) => userAgent.includes(keyword));
 
     setIsMobile(isMobileDevice);
+  }, []);
+
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > window.innerHeight + 6) {
+        setIsMainScrolled(true);
+      } else {
+        setIsMainScrolled(false);
+      }
+    }
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   // 마우스 이동 이벤트 핸들러
@@ -107,7 +130,11 @@ const Head = () => {
 
     // 헤더 영역 내에 있는지 확인
     const headerRect = e.currentTarget.getBoundingClientRect();
-    const isInsideHeader = clientX >= headerRect.left && clientX <= headerRect.right && clientY >= headerRect.top && clientY <= headerRect.bottom;
+    const isInsideHeader =
+      clientX >= headerRect.left &&
+      clientX <= headerRect.right &&
+      clientY >= headerRect.top &&
+      clientY <= headerRect.bottom;
 
     setCursorVisible(isInsideHeader);
   };
@@ -141,20 +168,35 @@ const Head = () => {
   const handleLogoClick = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
   return (
-    <HeadBlock onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+    <HeadBlock
+      isMainScrolled={isMainScrolled}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
       <RealHead>
-        {isCursorVisible && !isButtonHovered && !isMobile && <Cursor cursorPosition={cursorPosition} isLogoHovered={isLogoHovered} />}
-        <button onClick={handleLogoClick} className="logo" onMouseEnter={handleLogoMouseEnter} onMouseLeave={handleLogoMouseLeave}>
+        {isCursorVisible && !isButtonHovered && !isMobile && (
+          <Cursor cursorPosition={cursorPosition} isLogoHovered={isLogoHovered} />
+        )}
+        <button
+          onClick={handleLogoClick}
+          className="logo"
+          onMouseEnter={handleLogoMouseEnter}
+          onMouseLeave={handleLogoMouseLeave}
+        >
           HYEONA'S PORTFOLIO
         </button>
 
         {/* 오른쪽 버튼들 => RightButton 컴포넌트 */}
-        <div className="right-btn-box" onMouseEnter={handleButtonMouseEnter} onMouseLeave={handleButtonMouseLeave}>
+        <div
+          className="right-btn-box"
+          onMouseEnter={handleButtonMouseEnter}
+          onMouseLeave={handleButtonMouseLeave}
+        >
           {buttonTxt.map((el) => (
             <RightButton key={el.id} text={el.text} />
           ))}

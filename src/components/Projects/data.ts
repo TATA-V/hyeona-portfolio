@@ -150,7 +150,7 @@ const data: IProjectData[] = [
   {
     id: 3,
     img: portfolioJpg,
-    date: '2023.06.05 ~ 2023.06.15',
+    date: ' ',
     title: "HYEONA'S PORTFOLIO",
     subTitle: '포트폴리오 웹사이트 (개인 프로젝트)',
     contribution: '100%',

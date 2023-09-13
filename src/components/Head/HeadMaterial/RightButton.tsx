@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const RightButtonBlock = styled.button`
   width: auto;
@@ -13,7 +13,7 @@ const RightButtonBlock = styled.button`
 
   &:hover {
     color: #a3b2ff;
-    background-color: #1a1a1a;
+    background-color: rgba(255, 255, 255, 0.09);
     transition: 0.085s;
   }
 
@@ -35,32 +35,39 @@ interface IRightButtonProps {
 }
 
 const RightButton = ({ text }: IRightButtonProps) => {
+  const mainScrollTop = window.innerHeight;
+  const aboutmeTop = 440;
+  const skillTop = 782;
+  const archivingTop = 570;
+
+  console.log(mainScrollTop);
+
   const handleBtnClick = () => {
-    if (text === "About me") {
+    if (text === 'About me') {
       window.scrollTo({
-        top: 716,
-        behavior: "smooth",
+        top: mainScrollTop - 71,
+        behavior: 'smooth',
       });
     }
 
-    if (text === "Skills") {
+    if (text === 'Skills') {
       window.scrollTo({
-        top: 1190,
-        behavior: "smooth",
+        top: mainScrollTop + aboutmeTop - 37,
+        behavior: 'smooth',
       });
     }
 
-    if (text === "Archiving") {
+    if (text === 'Archiving') {
       window.scrollTo({
-        top: 1938,
-        behavior: "smooth",
+        top: mainScrollTop + aboutmeTop + skillTop - 70,
+        behavior: 'smooth',
       });
     }
 
-    if (text === "Projects") {
+    if (text === 'Projects') {
       window.scrollTo({
-        top: 2550,
-        behavior: "smooth",
+        top: mainScrollTop + aboutmeTop + skillTop + archivingTop - 35,
+        behavior: 'smooth',
       });
     }
   };
