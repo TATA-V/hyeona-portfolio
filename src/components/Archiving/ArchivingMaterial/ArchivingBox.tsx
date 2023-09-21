@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import check from "../../../assets/png-file/check.png";
+import styled from 'styled-components';
+import check from '../../../assets/png-file/check.png';
 
 const ArchivingBoxBlock = styled.div<Ititle>`
   width: 417px;
@@ -56,7 +56,7 @@ const ArchivingBoxBlock = styled.div<Ititle>`
   @media all and (min-width: 768px) and (max-width: 1023px) {
     width: 330px;
     margin-bottom: 20px;
-    height: 315px;
+    height: 304px;
 
     .archiving-box {
       .archiving-img {
@@ -81,7 +81,7 @@ const ArchivingBoxBlock = styled.div<Ititle>`
   @media all and (max-width: 767px) {
     width: 330px;
     margin-bottom: 20px;
-    height: ${({ title }) => (title === "GitHub" ? `283px` : `315px`)};
+    height: ${({ title }) => (title === 'GitHub' ? `283px` : `300px`)};
 
     .archiving-link-box {
       padding: 0 0 15px 0;
@@ -125,13 +125,9 @@ const ArchivingThree = styled.ul<Ititle>`
       line-height: 20px;
     }
 
-    .first-box {
-      height: ${({ title }) => (title === "GitHub" ? `17px` : `37px`)};
-    }
-
     .second-box,
     .third-box {
-      height: ${({ title }) => (title === "GitHub" ? `37px` : `37px`)};
+      height: ${({ title }) => (title === 'GitHub' ? `37px` : `37px`)};
     }
 
     .first-txt,
@@ -148,11 +144,6 @@ const ArchivingThree = styled.ul<Ititle>`
     .third-box {
       display: flex;
       line-height: 20px;
-    }
-
-    .second-box,
-    .third-box {
-      height: ${({ title }) => (title === "GitHub" ? `17px` : `37px`)};
     }
 
     .first-txt,
@@ -179,7 +170,16 @@ interface IArchivingBoxProps {
   thirdTxt: string;
 }
 
-const ArchivingBox = ({ img, title, link, linkTxt, des, firstTxt, secondTxt, thirdTxt }: IArchivingBoxProps) => {
+const ArchivingBox = ({
+  img,
+  title,
+  link,
+  linkTxt,
+  des,
+  firstTxt,
+  secondTxt,
+  thirdTxt,
+}: IArchivingBoxProps) => {
   return (
     <ArchivingBoxBlock title={title}>
       <div className="archiving-wrapper">
