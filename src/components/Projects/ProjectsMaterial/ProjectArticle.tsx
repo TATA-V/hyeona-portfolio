@@ -25,8 +25,8 @@ const ProjectArticleBlock = styled.article<Ilinecolor>`
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      box-shadow: inset 0 0 5px 0 rgba(44, 46, 54, 0.8);
+      height: calc(100% - 3px);
+      box-shadow: inset 0 0 5px 0 rgba(44, 46, 54, 0.65);
     }
   }
 
