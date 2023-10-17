@@ -34,6 +34,7 @@ const ProjectArticleBlock = styled.article<Ilinecolor>`
     width: 515px;
     max-height: 654px;
     object-fit: cover;
+    border-radius: 3px;
   }
 `;
 
