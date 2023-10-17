@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import { useState } from "react";
-import star from "../../../assets/svg-file/star.svg";
+import styled from 'styled-components';
+import { useState } from 'react';
+import star from '../../../assets/svg-file/star.svg';
 
-import ViewDetailBtn from "./ViewDetailBtn";
-import ViewDetailModal from "../../ViewDetailModal/ViewDetailModal";
-import { IProjectData } from "../data";
+import ViewDetailBtn from './ViewDetailBtn';
+import ViewDetailModal from '../../ViewDetailModal/ViewDetailModal';
+import { IProjectData } from '../data';
 
 interface Ilinecolor {
   linecolor?: string;
@@ -16,8 +16,24 @@ const ProjectArticleBlock = styled.article<Ilinecolor>`
   padding: 84px 0 84px 0;
   border-bottom: ${({ linecolor }) => (linecolor ? `2px solid ${linecolor}` : `2px solid #343843`)};
 
+  .left-box {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: inset 0 0 5px 0 rgba(44, 46, 54, 0.8);
+    }
+  }
+
   .left-img {
     width: 515px;
+    max-height: 654px;
+    object-fit: cover;
   }
 `;
 
@@ -82,6 +98,7 @@ const RightBox = styled.div`
     text-shadow: 0 0 0 #f9f9f9;
     line-height: 21px;
     padding-bottom: 20px;
+    white-space: pre-line;
   }
 
   @media all and (min-width: 768px) and (max-width: 1023px) {
@@ -305,7 +322,14 @@ const ProjectArticle = ({
           </FeaturesAndLink>
         </RightBox>
       </ProjectArticleBlock>
-      {openViewDetail && <ViewDetailModal id={id} viewDetail={viewDetail} openViewDetail={openViewDetail} setOpenViewDetail={setOpenViewDetail} />}
+      {openViewDetail && (
+        <ViewDetailModal
+          id={id}
+          viewDetail={viewDetail}
+          openViewDetail={openViewDetail}
+          setOpenViewDetail={setOpenViewDetail}
+        />
+      )}
     </>
   );
 };

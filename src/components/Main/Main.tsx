@@ -29,7 +29,7 @@ const RealMainBlock = styled.div<initialHeight>`
   display: flex;
   justify-content: center;
 
-  background: no-repeat url(${gifBg}); // 움직이는 gif로 바꿔야 함
+  background: no-repeat url(${gifBg});
   background-size: ${({ initialHeight }) => (initialHeight ? 'cover' : '1440px 804px')};
   background-position: 50% 10%;
   position: relative;

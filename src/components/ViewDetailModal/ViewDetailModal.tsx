@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import { useRef, useEffect } from "react";
-import xBtn from "../../assets/png-file/x-btn.png";
-import star from "../../assets/svg-file/star.svg";
-import { IViewDetail } from "../Projects/data";
+import styled from 'styled-components';
+import { useRef, useEffect } from 'react';
+import xBtn from '../../assets/png-file/x-btn.png';
+import star from '../../assets/svg-file/star.svg';
+import { IViewDetail } from '../Projects/data';
 
-import RoleTable from "./ViewDetailMaterial/RoleTable";
+import RoleTable from './ViewDetailMaterial/RoleTable';
 
 const ViewDetailModalBlock = styled.div`
   position: fixed;
@@ -64,9 +64,9 @@ const DetailModal = styled.div<Iid>`
 
   .title {
     color: #000;
-    font-size: ${({ num }) => (num === 1 ? "28px" : "35px")};
+    font-size: ${({ num }) => (num === 2 ? '28px' : '35px')};
     font-weight: 700;
-    padding-bottom: ${({ num }) => (num === 1 ? "29px" : "22px")};
+    padding-bottom: ${({ num }) => (num === 2 ? '29px' : '22px')};
   }
 
   .lilac-line {
@@ -100,7 +100,7 @@ const DetailModal = styled.div<Iid>`
 
     .title {
       color: #000;
-      font-size: ${({ num }) => (num === 1 ? "25px" : "32px")};
+      font-size: ${({ num }) => (num === 1 ? '25px' : '32px')};
       padding-right: 41px;
       line-height: 30px;
       font-weight: 700;
@@ -114,11 +114,11 @@ const DetailModal = styled.div<Iid>`
 
     .title {
       color: #000;
-      font-size: ${({ num }) => (num === 1 ? "20px" : "28px")};
+      font-size: ${({ num }) => (num === 1 ? '20px' : '28px')};
       padding-right: 41px;
       line-height: 30px;
       font-weight: 700;
-      padding-bottom: ${({ num }) => (num === 1 ? "13.5px" : "15px")};
+      padding-bottom: ${({ num }) => (num === 1 ? '13.5px' : '15px')};
     }
   }
 `;
@@ -213,7 +213,12 @@ interface IViewDetailProps {
   viewDetail: IViewDetail;
 }
 
-const ViewDetailModal = ({ id, openViewDetail, setOpenViewDetail, viewDetail }: IViewDetailProps) => {
+const ViewDetailModal = ({
+  id,
+  openViewDetail,
+  setOpenViewDetail,
+  viewDetail,
+}: IViewDetailProps) => {
   const viewDetailRef = useRef<HTMLDivElement>(null);
 
   const {
@@ -234,13 +239,17 @@ const ViewDetailModal = ({ id, openViewDetail, setOpenViewDetail, viewDetail }: 
 
   useEffect(() => {
     const closeModal = (e: MouseEvent) => {
-      if (openViewDetail && viewDetailRef.current && !viewDetailRef.current.contains(e.target as Node)) {
+      if (
+        openViewDetail &&
+        viewDetailRef.current &&
+        !viewDetailRef.current.contains(e.target as Node)
+      ) {
         setOpenViewDetail(false);
       }
     };
-    document.addEventListener("mousedown", closeModal);
+    document.addEventListener('mousedown', closeModal);
     return () => {
-      document.removeEventListener("mousedown", closeModal);
+      document.removeEventListener('mousedown', closeModal);
     };
   }, [openViewDetail, setOpenViewDetail]);
 
@@ -266,19 +275,19 @@ const ViewDetailModal = ({ id, openViewDetail, setOpenViewDetail, viewDetail }: 
               </div>
               <p className="meaning-content content">{meaningContent}</p>
               <p className="link-stacks content">
-                ⦁ 배포 링크:{" "}
+                ⦁ 배포 링크:{' '}
                 <a className="link" rel="noreferrer" href={deploLink} target="_blank">
                   {deploTxt}
                 </a>
                 {storyLink && storyTxt && (
                   <>
-                    <br />⦁ Storybook 링크:{" "}
+                    <br />⦁ Storybook 링크:{' '}
                     <a className="link" rel="noreferrer" href={storyLink} target="_blank">
                       {storyTxt}
                     </a>
                   </>
                 )}
-                <br />⦁ GitHub 링크:{" "}
+                <br />⦁ GitHub 링크:{' '}
                 <a className="link" rel="noreferrer" href={githubLink} target="_blank">
                   {githubTxt}
                 </a>

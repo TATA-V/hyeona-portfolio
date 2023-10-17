@@ -1,6 +1,7 @@
 import lumianJpg from '../../assets/jpg-file/lumian.jpg';
 import todolistJpg from '../../assets/jpg-file/tata-todolist.jpg';
 import portfolioJpg from '../../assets/jpg-file/portfolio.jpg';
+import aurawaveGif from '../../assets/gif-file/aurawave.gif';
 
 export interface IMyRole {
   figma: string;
@@ -48,6 +49,46 @@ export interface IProjectData {
 const data: IProjectData[] = [
   {
     id: 1,
+    img: aurawaveGif,
+    date: '2023.09.18 ~ 진행 중',
+    title: 'AuraWave',
+    subTitle: '커스텀 음악, 플레이리스트 공유 (개인 프로젝트)',
+    contribution: '100%',
+    stacks: 'Next, Recoil, typescript, Styled-components, Firebase, Figma',
+    content: `모닥불, 여름밤, 빗소리, 함박눈 소리를 얹어 음악을 들을 수 있으며,\n 유저들끼리 플레이리스트를 공유할 수 있습니다.\n\n 커스텀 한 배경 음악에 따라 메인 페이지에 있는\n 대표 이미지의 배경 효과가 달라집니다. (제작 예정) `,
+    features: `회원가입, 로그인, 음악 추가, 플레이리스트 생성, 음악 컨트롤 바, 무한 스크롤, 음악 커스텀 기능`,
+    githubLink: 'https://github.com/TATA-V/aurawave-nextjs',
+    githubTxt: 'github.com/TATA-V/aurawave',
+    deploLink: '',
+    deploTxt: 'none',
+    linecolor: '#343843',
+    viewDetail: {
+      title: 'AuraWave',
+      meaningContent: `커스텀 음악, 플레이리스트 공유 (개인 프로젝트)
+      
+      모닥불, 여름밤, 빗소리, 함박눈 소리를 얹어 음악을 들을 수 있으며,
+      유저들끼리 플레이리스트를 공유할 수 있습니다.
+      
+      커스텀 한 배경 음악에 따라 메인 페이지에 있는 대표 이미지의 배경 효과가 달라집니다. (제작 예정)`,
+      deploLink: '',
+      deploTxt: 'none',
+      githubLink: 'https://github.com/TATA-V/aurawave-nextjs',
+      githubTxt: 'github.com/TATA-V/aurawave',
+      stacks: 'Next, Recoil, typescript, Styled-components, Firebase, Figma',
+      summarygContent: `(작성 예정)`,
+      featuresContent: `⦁ 로그인, 회원가입
+      ⦁ 음악 추가, 수정, 삭제
+      ⦁ 플레이리스트 생성, 수정, 삭제
+      ⦁ 음악 컨트롤 바
+      ⦁ 무한 스크롤
+      ⦁ 음악 커스텀 (제작 예정)
+      ⦁ 배경 음악에 따라 바뀌는 대표 이미지 배경 효과 (제작 예정)
+      `,
+      backgroundContent: `(작성 예정)`,
+    },
+  },
+  {
+    id: 2,
     img: lumianJpg,
     date: '2023.04.28 ~ 2023.05.25',
     title: '루미안(LUMIAN)',
@@ -99,7 +140,7 @@ const data: IProjectData[] = [
     },
   },
   {
-    id: 2,
+    id: 3,
     img: todolistJpg,
     date: '2023.05.14',
     title: 'TATA’s Todo-List',
@@ -148,7 +189,7 @@ const data: IProjectData[] = [
     },
   },
   {
-    id: 3,
+    id: 4,
     img: portfolioJpg,
     date: ' ',
     title: "HYEONA'S PORTFOLIO",
