@@ -6,6 +6,10 @@ import ViewDetailBtn from './ViewDetailBtn';
 import ViewDetailModal from '../../ViewDetailModal/ViewDetailModal';
 import { IProjectData } from '../data';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+import 'swiper/swiper-bundle.css';
+
 interface Ilinecolor {
   linecolor?: string;
 }
@@ -264,8 +268,8 @@ const ProjectArticle = ({
     <>
       <ProjectArticleBlock className="project-article" linecolor={linecolor}>
         {/* 왼쪽 사진 */}
-        <div className="left-box">
-          <img className="left-img" src={img} alt="lumian" />
+        <div className='left-box'>
+          <img className="left-img" src={img} alt="project" />
         </div>
 
         {/* 오른쪽 텍스트 */}

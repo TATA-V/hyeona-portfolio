@@ -64,7 +64,7 @@ const DetailModal = styled.div<Iid>`
 
   .title {
     color: #000;
-    font-size: ${({ num }) => (num === 2 ? '28px' : '35px')};
+    font-size: 28px;
     font-weight: 700;
     padding-bottom: ${({ num }) => (num === 2 ? '29px' : '22px')};
   }
@@ -313,13 +313,15 @@ const ViewDetailModal = ({
             </Summary>
 
             {/* Background */}
-            <Background>
-              <div className="background">
-                <img className="star" src={star} alt="star" />
-                <span className="sub-title">Background</span>
-              </div>
-              <p className="background-des content">{backgroundContent}</p>
-            </Background>
+            {backgroundContent && (
+              <Background>
+                <div className="background">
+                  <img className="star" src={star} alt="star" />
+                  <span className="sub-title">Background</span>
+                </div>
+                <p className="background-des content">{backgroundContent}</p>
+              </Background>
+            )}
           </MeaningSummaryBackgroung>
         </DetailModal>
 
