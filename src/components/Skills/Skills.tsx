@@ -2,7 +2,9 @@ import styled, { keyframes } from 'styled-components';
 import starBar from '../../assets/png-file/star-bar.png';
 import languages from '../../assets/png-file/languages.png';
 import frameLibraries from '../../assets/png-file/frame-libraries.png';
+import libraries from '../../assets/png-file/libraries.png';
 import others from '../../assets/png-file/others.png';
+import skills from '../../assets/png-file/skills.png';
 import { useState, useRef, useEffect } from 'react';
 
 const languagesFrameIn = keyframes`
@@ -71,7 +73,7 @@ const SkillsBlock = styled.div`
 
 const RealSkillsBlock = styled.div`
   width: 974px;
-  height: 782px;
+  height: 890px;
   padding: 84px 0 84px 0;
   border-bottom: 2px solid #edecee;
 
@@ -298,6 +300,90 @@ const Others = styled.div`
   }
 `;
 
+const Libraries = styled.div`
+  width: 427px;
+  height: 221px;
+
+  transform: translate(545px, -77px);
+
+  &.frame-in {
+    opacity: 0;
+    animation: ${othersFrameIn} 1.2s forwards;
+    animation-delay: 0.1s;
+  }
+
+  .lilac-line {
+    width: 64px;
+    height: 2px;
+    background-color: #f6f1f8;
+    margin: 5px 0 13px auto;
+  }
+
+  .frame {
+    text-align: end;
+  }
+
+  .react-redux-styled {
+    width: 426.09px;
+    height: 176px;
+    background: no-repeat url(${libraries});
+    background-size: 426.09px 176px;
+  }
+
+  .react-redux-styled {
+    display: flex;
+  }
+
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    transform: translate(272px, -80px);
+    margin-bottom: 35px;
+    width: 329px;
+
+    &.frame-in {
+      opacity: 0;
+      animation: ${libraries} 1.2s forwards;
+      animation-delay: 0.1s;
+    }
+
+    .lilac-line {
+      width: 52px;
+    }
+
+    .react-redux-styled {
+      width: 329.64px;
+      height: 136px;
+      background: no-repeat url(${libraries});
+      background-size: cover;
+      display: flex;
+    }
+  }
+
+  @media all and (max-width: 767px) {
+    transform: translate(0, -80px);
+    width: 325px;
+    height: 221px;
+
+    &.frame-in {
+      opacity: 0;
+      animation: ${libraries} 1.2s forwards;
+      animation-delay: 0.1s;
+    }
+
+    .lilac-line {
+      width: 46px;
+    }
+
+    .react-redux-styled {
+      transform: translate(118px, 0);
+      width: 206px;
+      height: 85px;
+      background: no-repeat url(${libraries});
+      background-size: cover;
+      display: flex;
+    }
+  }
+`;
+
 const FrameAndLibraries = styled.div`
   width: 581.5px;
   height: 225px;
@@ -357,6 +443,15 @@ const FrameAndLibraries = styled.div`
   }
 `;
 
+const Skill = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .image {
+    width: 100%;
+  }
+`
+
 const Skills = () => {
   const [skillsView, setSkillsView] = useState(false);
   const skillsRef = useRef<HTMLDivElement>(null);
@@ -393,8 +488,9 @@ const Skills = () => {
           <img className="star-bar" src={starBar} alt="star" />
         </div>
 
-        <div ref={skillsRef}>
-          <Languages className={skillsView ? 'frame-in' : ''}>
+        <Skill ref={skillsRef}>
+          <img className='image' src={skills} alt="skills" />
+          {/* <Languages className={skillsView ? 'frame-in' : ''}>
             <p className="skills-bold">Programming Languages</p>
             <div className="lilac-line"></div>
             <div className="js-ts-html-css"></div>
@@ -407,11 +503,14 @@ const Skills = () => {
           </Others>
 
           <FrameAndLibraries className={skillsView ? 'frame-in' : ''}>
-            <p className="skills-bold">Frameworks & Libraries</p>
+            <p className="skills-bold">Libraries</p>
             <div className="lilac-line"></div>
             <div className="git-s3-postman-figma"></div>
           </FrameAndLibraries>
-        </div>
+          <Libraries className={skillsView ? 'frame-in' : ''}>
+            <div className="react-redux-styled"></div>
+          </Libraries> */}
+        </Skill>
       </RealSkillsBlock>
     </SkillsBlock>
   );

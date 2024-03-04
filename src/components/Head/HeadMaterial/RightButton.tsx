@@ -37,7 +37,7 @@ interface IRightButtonProps {
 const RightButton = ({ text }: IRightButtonProps) => {
   const mainScrollTop = window.innerHeight;
   const aboutmeTop = 440;
-  const skillTop = 782;
+  const skillTop = 890;
   const archivingTop = 570;
 
   const handleBtnClick = () => {
