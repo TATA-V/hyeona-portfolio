@@ -1,24 +1,26 @@
 {
   "files": {
     "main.css": "/hyeona-portfolio/static/css/main.22d6257d.css",
-    "main.js": "/hyeona-portfolio/static/js/main.9199e180.js",
+    "main.js": "/hyeona-portfolio/static/js/main.11b90b60.js",
     "static/media/gifBg.gif": "/hyeona-portfolio/static/media/gifBg.72f20bb60acd3551d95f.gif",
     "static/media/lumian.jpg": "/hyeona-portfolio/static/media/lumian.3d3540c01ed39166a746.jpg",
+    "static/media/skills.png": "/hyeona-portfolio/static/media/skills.b1e844b0ef100782cb4c.png",
     "static/media/tata-todolist.jpg": "/hyeona-portfolio/static/media/tata-todolist.f08902a9ab037fc82974.jpg",
     "static/media/briefy.png": "/hyeona-portfolio/static/media/briefy.da52191a3f48c765a144.png",
     "static/media/aurawave.png": "/hyeona-portfolio/static/media/aurawave.2f7bd6eb651add8968a3.png",
-    "static/media/frame-libraries.png": "/hyeona-portfolio/static/media/frame-libraries.36724173ed2a5c6f8b06.png",
+    "static/media/frame-libraries.png": "/hyeona-portfolio/static/media/frame-libraries.086021b0f808fde4cb09.png",
     "static/media/languages.png": "/hyeona-portfolio/static/media/languages.4fdd21b3c8ef5db32ddd.png",
     "static/media/portfolio.jpg": "/hyeona-portfolio/static/media/portfolio.3bcc34ace91e36598c78.jpg",
-    "static/media/others.png": "/hyeona-portfolio/static/media/others.271ac1ba8518495d5551.png",
+    "static/media/others.png": "/hyeona-portfolio/static/media/others.de2eb34a65eb990c084b.png",
+    "static/media/libraries.png": "/hyeona-portfolio/static/media/libraries.60afb8b8e2c9680ff17f.png",
     "static/media/star.svg": "/hyeona-portfolio/static/media/star.fe9cc6d40a0faaf481d8beefe1684048.svg",
     "static/media/github.svg": "/hyeona-portfolio/static/media/github.e63f10b1bf4693e95eaa1b1e8d9c2617.svg",
     "index.html": "/hyeona-portfolio/index.html",
     "main.22d6257d.css.map": "/hyeona-portfolio/static/css/main.22d6257d.css.map",
-    "main.9199e180.js.map": "/hyeona-portfolio/static/js/main.9199e180.js.map"
+    "main.11b90b60.js.map": "/hyeona-portfolio/static/js/main.11b90b60.js.map"
   },
   "entrypoints": [
     "static/css/main.22d6257d.css",
-    "static/js/main.9199e180.js"
+    "static/js/main.11b90b60.js"
   ]
 }
