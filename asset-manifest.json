@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hyeona-portfolio/static/css/main.22d6257d.css",
-    "main.js": "/hyeona-portfolio/static/js/main.509ee27c.js",
+    "main.js": "/hyeona-portfolio/static/js/main.760babb7.js",
     "static/media/gifBg.gif": "/hyeona-portfolio/static/media/gifBg.72f20bb60acd3551d95f.gif",
     "static/media/lumian.jpg": "/hyeona-portfolio/static/media/lumian.3d3540c01ed39166a746.jpg",
     "static/media/skills.png": "/hyeona-portfolio/static/media/skills.b1e844b0ef100782cb4c.png",
@@ -17,10 +17,10 @@
     "static/media/github.svg": "/hyeona-portfolio/static/media/github.e63f10b1bf4693e95eaa1b1e8d9c2617.svg",
     "index.html": "/hyeona-portfolio/index.html",
     "main.22d6257d.css.map": "/hyeona-portfolio/static/css/main.22d6257d.css.map",
-    "main.509ee27c.js.map": "/hyeona-portfolio/static/js/main.509ee27c.js.map"
+    "main.760babb7.js.map": "/hyeona-portfolio/static/js/main.760babb7.js.map"
   },
   "entrypoints": [
     "static/css/main.22d6257d.css",
-    "static/js/main.509ee27c.js"
+    "static/js/main.760babb7.js"
   ]
 }
