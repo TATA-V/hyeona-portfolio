@@ -275,10 +275,14 @@ const ViewDetailModal = ({
               </div>
               <p className="meaning-content content">{meaningContent}</p>
               <p className="link-stacks content">
-                ⦁ 배포 링크:{' '}
-                <a className="link" rel="noreferrer" href={deploLink} target="_blank">
-                  {deploTxt}
-                </a>
+                {deploLink && (
+                  <>
+                    ⦁ 배포 링크:{' '}
+                    <a className="link" rel="noreferrer" href={deploLink} target="_blank">
+                      {deploTxt}
+                    </a>
+                  </>
+                )}
                 {storyLink && storyTxt && (
                   <>
                     <br />⦁ Storybook 링크:{' '}

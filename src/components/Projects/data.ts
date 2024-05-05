@@ -3,7 +3,6 @@ import todolistJpg from '../../assets/jpg-file/tata-todolist.jpg';
 import portfolioJpg from '../../assets/jpg-file/portfolio.jpg';
 import aurawavePng from '../../assets/png-file/aurawave.png';
 import briefyPng from '../../assets/png-file/briefy.png';
-import aurawaveGif from '../../assets/gif-file/aurawave.gif';
 
 export interface IMyRole {
   figma: string;
@@ -15,8 +14,8 @@ export interface IMyRole {
 export interface IViewDetail {
   title: string;
   meaningContent: string;
-  deploLink: string;
-  deploTxt: string;
+  deploLink?: string;
+  deploTxt?: string;
   githubLink: string;
   githubTxt: string;
   stacks: string;
@@ -40,8 +39,8 @@ export interface IProjectData {
   features: string;
   githubLink: string;
   githubTxt: string;
-  deploLink: string;
-  deploTxt: string;
+  deploLink?: string;
+  deploTxt?: string;
   storyLink?: string;
   storyTxt?: string;
   linecolor: string;
@@ -52,17 +51,17 @@ const data: IProjectData[] = [
   {
     id: 1,
     img: briefyPng,
-    date: '2023.01 ~ 진행 중',
+    date: '2024.01 ~ 진행 중',
     title: 'Briefy',
     subTitle: '팀 프로젝트 (프론트 1명, 백엔드 1명, 디자이너 1명, 기획자 1명)',
     contribution: '100%(프론트엔드)',
-    stacks: 'React, Typescript, Storybook, TailwindCss, Styled-components, Vercel, Figma',
+    stacks: 'React, Typescript, Storybook, TailwindCSS, Styled-components, Framer-motion, Vercel, Figma, Vite',
     content: `📨뉴스레터 구독 서비스\n시간이 없어도 세상은 궁금하니까!\n세상 돌아가는 소식을 쉽고 재미있게 받아보세요\n\n 관심있는 뉴스 분야를 선택하면 뉴스레터를 추천해 드리고,
     뉴스레터 구독 시 브리피 전용 메일에 뉴스를 보내드립니다.
     `,
     features: `구글 로그인, 브리피 전용 메일 생성, 뉴스레터 추천 기능, 뉴스레터 구독시 메일에 뉴스 전송`,
     githubLink: 'https://github.com/TATA-V/briefy',
-    githubTxt: 'github.com/TATA-V/aurawave',
+    githubTxt: 'github.com/TATA-V/briefy',
     deploLink: 'https://briefy.vercel.app/',
     deploTxt: 'briefy deploy link',
     storyLink: 'https://briefy-storybook.vercel.app',
@@ -82,8 +81,8 @@ const data: IProjectData[] = [
       storyLink: 'https://briefy-storybook.vercel.app',
       storyTxt: 'briefy storybook deploy link',
       githubLink: 'https://github.com/TATA-V/briefy',
-      githubTxt: 'github.com/TATA-V/aurawave',
-      stacks: 'React, Typescript, Storybook, TailwindCss, Styled-components, Vercel, Figma',
+      githubTxt: 'github.com/TATA-V/briefy',
+      stacks: 'React, Typescript, Storybook, TailwindCSS, Styled-components, Framer-motion, Vercel, Figma, Vite',
       summarygContent: `피그마 디자인을 기반으로
       공통 컴포넌트로 사용하게 될 부분들을 스토리북으로 구성했습니다.
       이 스토리북을 npm에 배포하여 편리하게 공유하고 활용할 수 있도록 만들었습니다.
@@ -109,13 +108,13 @@ const data: IProjectData[] = [
     title: 'AuraWave',
     subTitle: '커스텀 음악, 플레이리스트 공유 (개인 프로젝트)',
     contribution: '100%',
-    stacks: 'Next14, Recoil, typescript, Styled-components, react-hook-form, Firebase, frame-motion, Vercel, Figma',
+    stacks: 'Next.js14, Recoil, typescript, Styled-components, react-hook-form, Firebase, Framer-motion, Vercel, Figma',
     content: `음악에 감성 한 스푼🥄\n
-    모닥불, 여름밤, 빗소리, 함박눈 소리를 얹어 음악을 들을 수 있으며,\n 유저들끼리 플레이리스트를 공유할 수 있습니다. 위치 권한을 허용하면, 현재 날씨에 어울리는 배경음을 추천해 줍니다.\n\n 커스텀 한 배경 음악에 따라 메인 페이지에 있는\n 대표 이미지의 배경 효과가 달라집니다.`,
+    모닥불, 여름밤, 빗소리, 함박눈 소리를 얹어 음악을 들을 수 있으며,\n 유저들끼리 플레이리스트를 공유할 수 있습니다. 위치 권한을 허용하면, 현재 날씨에 어울리는 배경음을 추천해 드립니다.\n\n 커스텀 한 배경 음악에 따라 메인 페이지에 있는\n 대표 이미지의 배경 효과가 달라집니다.`,
     features: `회원가입, 로그인, 음악 추가, 플레이리스트 생성, 음악 컨트롤 바, 날씨에 맞는 배경음 추천, 음악 커스텀 기능`,
     githubLink: 'https://github.com/TATA-V/aurawave',
     githubTxt: 'github.com/TATA-V/aurawave',
-    deploLink: 'https://aurawave.vercel.app/',
+    deploLink: 'https://www.aurawave.site',
     deploTxt: 'aurawave deploy link',
     linecolor: '#343843',
     viewDetail: {
@@ -124,14 +123,14 @@ const data: IProjectData[] = [
       
       모닥불, 여름밤, 빗소리, 함박눈 소리를 얹어 음악을 들을 수 있으며,
       유저들끼리 플레이리스트를 공유할 수 있습니다.
-      위치 권한을 허용하면, 현재 날씨에 어울리는 배경음을 추천해 줍니다.
+      위치 권한을 허용하면, 현재 날씨에 어울리는 배경음을 추천해 드립니다.
       
       커스텀 한 배경 음악에 따라 메인 페이지에 있는 대표 이미지의 배경 효과가 달라집니다.`,
-      deploLink: 'https://aurawave.vercel.app/',
+      deploLink: 'https://www.aurawave.site',
       deploTxt: 'aurawave deploy link',
       githubLink: 'https://github.com/TATA-V/aurawave',
       githubTxt: 'github.com/TATA-V/aurawave',
-      stacks: 'Next14, Recoil, typescript, Styled-components, react-hook-form, Firebase, frame-motion, Vercel, Figma',
+      stacks: 'Next.js14, Recoil, typescript, Styled-components, react-hook-form, Firebase, Framer-motion, Vercel, Figma',
       summarygContent: `PWA로 PC나 모바일의 홈 화면에 설치해서 사용할 수 있습니다.
       
       백엔드로는 Firebase를 사용했습니다.
@@ -164,8 +163,8 @@ const data: IProjectData[] = [
     작성 할 수 있는 Artist 페이지`,
     githubLink: 'https://github.com/TATA-V/lumian-project',
     githubTxt: 'github.com/TATA-V/lumian-project',
-    deploLink: 'http://lumian-project.s3-website.ap-northeast-2.amazonaws.com',
-    deploTxt: 'LUMIAN',
+    // deploLink: 'http://lumian-project.s3-website.ap-northeast-2.amazonaws.com',
+    // deploTxt: 'LUMIAN',
     linecolor: '#343843',
     viewDetail: {
       title: '루미안(Lumian) - 좋아하는 아티스트와 소통할 수 있는 서비스',
@@ -174,8 +173,8 @@ const data: IProjectData[] = [
       
       빛은 영감과 창의성을 상징하는 요소로, Luminae과 via는
       아티스트와팬 간의 관계를 나타내며, 빛이 가득한 길로 함께 나아가는 것을 상징합니다.`,
-      deploLink: 'http://lumian-project.s3-website.ap-northeast-2.amazonaws.com',
-      deploTxt: 'LUMIAN',
+      // deploLink: 'http://lumian-project.s3-website.ap-northeast-2.amazonaws.com',
+      // deploTxt: 'LUMIAN',
       githubLink: 'https://github.com/TATA-V/lumian-project',
       githubTxt: 'github.com/TATA-V/lumian',
       stacks: 'React, Redux-toolKit, Styled-components, Axios, AmazonS3, ESLint, Prettier, Figma',
@@ -223,13 +222,14 @@ const data: IProjectData[] = [
       githubLink: 'https://github.com/TATA-V/todolist-storybook-typescript',
       githubTxt: 'github.com/TATA-V/todolist',
       stacks: 'React, Redux, Styled-components, Typescript, Storybook, Figma',
-      summarygContent: `메인 페이지, 알림 페이지, 설정 페이지가 있습니다.
-      플러스 버튼을 눌러 todo를 생성할 수 있으며, 텍스트 클릭 시 내용 수정이 가능합니다.
+      summarygContent: `일정 관리를 위한 투두리스트입니다.
+      Figma로 디자인한 후 만든 첫 프로젝트이며, 
+      Pure Redux로 전역 상태 관리 연습을 위해 제작되었습니다.
       
       이 프로젝트는 초기에 javascript로 개발되었습니다. 
       이후 타입 안정성을 위해 typescript로 리팩토링하였고,
       storybook을 도입하여 컴포넌트를 문서화했습니다.
-
+      
       이러한 경험을 통해 storybook과 typescript의 사용법에 익숙해졌으며,
       체계적인 코드 관리와 유지보수성을 높이는 방법에 대해 고민하는 계기가 되었습니다.`,
       featuresContent: `⦁ todo 생성, 수정, 삭제

@@ -190,7 +190,7 @@ const Main = () => {
               <span className="front">Frontend Developer</span>
               <br />
             </p>
-            <span className="des">그림 그리는 것을 좋아하는 프론트엔드 개발자 최현아입니다.</span>
+            <span className="des">재밌는 걸 만들고 싶은 프론트엔드 개발자 최현아입니다.</span>
             <MoreBtn />
           </div>
         </TopTextBtnBox>

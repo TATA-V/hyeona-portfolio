@@ -307,13 +307,13 @@ const ProjectArticle = ({
               </a>
             </div>
 
-            <div className="deployment">
+            {deploLink && <div className="deployment">
               <img className="star" src={star} alt="star" />
               <span className="deplo-txt">배포 링크</span>
               <a className="link deplo-link" rel="noreferrer" href={deploLink} target="_blank">
                 {deploTxt}
               </a>
-            </div>
+            </div>}
 
             {storyLink && storyTxt && (
               <div className="storybook">

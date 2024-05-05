@@ -109,6 +109,7 @@ const RealSkillsBlock = styled.div`
 
   @media all and (min-width: 768px) and (max-width: 1023px) {
     width: 600px;
+    height: 630px;
 
     .skills-bold {
       font-size: 17px;
@@ -119,9 +120,9 @@ const RealSkillsBlock = styled.div`
     }
   }
 
-  @media all and (min-width: 480px) and (max-width: 767px) {
+  @media all and (max-width: 767px) {
     width: 330px;
-    height: 700px;
+    height: 470px;
     font-size: 35px;
 
     .skills-bold {
@@ -141,7 +142,7 @@ const RealSkillsBlock = styled.div`
 
   @media all and (max-width: 479px) {
     width: 330px;
-    height: 700px;
+    height: 470px;
     font-size: 35px;
 
     .skills-bold {
