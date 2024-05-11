@@ -51,7 +51,7 @@ const data: IProjectData[] = [
   {
     id: 1,
     img: briefyPng,
-    date: '2024.01 ~ 진행 중',
+    date: '2024.01 ~ 02',
     title: 'Briefy',
     subTitle: '팀 프로젝트 (프론트 1명, 백엔드 1명, 디자이너 1명, 기획자 1명)',
     contribution: '100%(프론트엔드)',
@@ -64,7 +64,7 @@ const data: IProjectData[] = [
     githubTxt: 'github.com/TATA-V/briefy',
     deploLink: 'https://briefy.vercel.app/',
     deploTxt: 'briefy deploy link',
-    storyLink: 'https://briefy-storybook.vercel.app',
+    storyLink: 'https://tata-v.github.io/briefy-storybook/',
     storyTxt: 'briefy storybook deploy link',
     linecolor: '#343843',
     viewDetail: {
@@ -78,7 +78,7 @@ const data: IProjectData[] = [
       뉴스레터 구독 시 브리피 전용 메일에 뉴스를 보내드립니다.`,
       deploLink: 'https://briefy.vercel.app/',
       deploTxt: 'briefy deploy link',
-      storyLink: 'https://briefy-storybook.vercel.app',
+      storyLink: 'https://tata-v.github.io/briefy-storybook/',
       storyTxt: 'briefy storybook deploy link',
       githubLink: 'https://github.com/TATA-V/briefy',
       githubTxt: 'github.com/TATA-V/briefy',
