@@ -16,9 +16,8 @@ jobs:
           node-version: 20
       - name: Build
         run: |-
-          npm i -g pnpm
-          pnpm i
-          pnpm build
+          npm install
+          npm run build
       - name: Deploy Docs
         uses: peaceiris/actions-gh-pages@v3
         with:
